@@ -21,19 +21,9 @@ You can import this package directly from GitHub using the Unity Package Manager
 
 Unity will download and import the Wit Smart Network package into your project.
 
----
-
-## Folder Structure
-
-- `Runtime/` — Core runtime scripts
-- `Editor/` — Editor scripts (if any)
-- `package.json` — Unity package manifest
-
----
-
 ## Requirements
 
-- Unity 2021.3 or newer
+- Unity 6 or newer
 
 ---
 
@@ -44,7 +34,3 @@ After importing, you can find the Wit Smart Network components in your project u
 Refer to the code and comments for usage examples.
 
 ---
-
-## Support
-
-For issues or questions, please open an issue on the [GitHub repository](https://github.com/Sulaiman281/WitSmartNetwork-Unity).
