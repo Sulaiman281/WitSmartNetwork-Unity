@@ -1,0 +1,11 @@
+{
+    "name": "com.witshells.witsmartnetwork",
+    "version": "1.0.0",
+    "displayName": "Wit Smart Network",
+    "description": "Fast, flexible TCP/UDP networking for Unity.",
+    "unity": "2021.3",
+    "author": {
+        "name": "Suleman",
+        "email": "sayedsulaiman607@email.com"
+    }
+}
