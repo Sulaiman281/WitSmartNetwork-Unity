@@ -8,6 +8,7 @@ namespace WitSmartNetwork.Client
 
         protected override void OnConnectedToServer()
         {
+            Logger.Log("Connected to server successfully.");
             NetworkEventManager.Instance.OnClientConnectedToServer.Invoke();
         }
 
@@ -28,6 +29,7 @@ namespace WitSmartNetwork.Client
                 Send("pong");
                 return;
             }
+            Logger.Log($"Received message from server: {message}");
             NetworkEventManager.Instance.OnReceiveMessage.Invoke(message);
         }
     }

@@ -67,12 +67,12 @@ namespace WitSmartNetwork.Server
 
         protected override void OnMessageReceived(uint clientId, string message)
         {
+            _lastPongTimes[clientId] = DateTime.UtcNow; // Update last pong time
             if (string.Equals(message, "pong", StringComparison.OrdinalIgnoreCase))
             {
-                _lastPongTimes[clientId] = DateTime.UtcNow;
-                // Optionally: Console.WriteLine($"Pong received from {clientId}");
                 return;
             }
+            Logger.Log($"Message received from client {clientId}: {message}");
             NetworkEventManager.Instance.OnServerMessageReceived.Invoke(clientId, message);
             var groupId = GetClientGroupId(clientId);
             if (groupId <= 0)

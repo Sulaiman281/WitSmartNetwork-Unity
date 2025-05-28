@@ -95,5 +95,25 @@ namespace WitSmartNetwork.Communication
                 Logger.LogWarning($"No UnityEvent registered for CMD '{msg.CMD}'.");
             }
         }
+
+        public void RegisterMessageHandler(string cmd, UnityAction<string> handler)
+        {
+            if (string.IsNullOrEmpty(cmd) || handler == null)
+            {
+                Logger.LogWarning("Invalid command or handler provided for registration.");
+                return;
+            }
+
+            if (_eventLookup.TryGetValue(cmd, out var unityEvent))
+            {
+                unityEvent.AddListener(handler);
+            }
+            else
+            {
+                var newEvent = new UnityEvent<string>();
+                newEvent.AddListener(handler);
+                _eventLookup[cmd] = newEvent;
+            }
+        }
     }
 }

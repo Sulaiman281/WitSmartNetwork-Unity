@@ -53,6 +53,7 @@ namespace WitSmartNetwork.Communication
                 Logger.LogError("Received invalid network message.");
                 return;
             }
+            Logger.Log($"Received message with Data: {json}");
 
             if (_handlers.TryGetValue(msg.CMD, out var handlerInfo))
             {

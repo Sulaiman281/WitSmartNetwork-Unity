@@ -204,7 +204,7 @@ namespace WitSmartNetwork.Server
         {
             foreach (var kvp in _clients)
             {
-                if (kvp.Value.GroupId <= 0) // Only send to clients not in a group
+                if (kvp.Value.GroupId > 0) // Only send to clients not in a group
                     continue;
                 if (kvp.Key != excludedClientId)
                 {

@@ -4,7 +4,7 @@ namespace WitSmartNetwork
 {
     public enum NetworkMode { Server, Client }
 
-    [CreateAssetMenu(menuName = "WitSmartNetwork/Settings", fileName = "NetworkSettings", order = 1)]
+    [CreateAssetMenu(menuName = "WitNetwork/Settings", fileName = "NetworkSettings", order = 1)]
     public class Settings : ScriptableObject
     {
         private static readonly Settings _instance = null;

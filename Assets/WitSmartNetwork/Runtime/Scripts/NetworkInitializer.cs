@@ -40,6 +40,13 @@ namespace WitSmartNetwork
                 return;
             }
 
+#if UNITY_SERVER && !UNITY_EDITOR
+            // If running as a dedicated server, force server mode and initialize server only
+            Settings.Mode = NetworkMode.Server;
+            StartServer();
+            return;
+#endif
+
             if (autoStart)
             {
                 InitializeNetwork();
@@ -56,13 +63,14 @@ namespace WitSmartNetwork
             {
                 StartClient();
             }
-            CommunicationManagerSO.Instance.Initialize();
+            if (communicationInitialization)
+            {
+                CommunicationManagerSO.Instance.Initialize();
+            }
         }
 
         private void StartServer()
         {
-            Logger.Log("Starting WitShells Smart Network Server!");
-
             server = new MyTcpServer(Settings.ServerPort, "0.0.0.0");
             server.StartServer();
         }
