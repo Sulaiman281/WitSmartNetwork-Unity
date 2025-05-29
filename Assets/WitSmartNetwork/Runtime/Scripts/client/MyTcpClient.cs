@@ -1,6 +1,7 @@
 using System;
+using WitNetwork.Log;
 
-namespace WitSmartNetwork.Client
+namespace WitNetwork.Client
 {
     public class MyTcpClient : TcpClientBase
     {

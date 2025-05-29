@@ -1,4 +1,4 @@
-namespace WitSmartNetwork.Server
+namespace WitNetwork.Server
 {
     public enum ServerMode
     {

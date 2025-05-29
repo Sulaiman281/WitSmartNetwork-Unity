@@ -6,7 +6,7 @@ using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace WitSmartNetwork.Server
+namespace WitNetwork.Server
 {
     public abstract class ATcpServer
     {

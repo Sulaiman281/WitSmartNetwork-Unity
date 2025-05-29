@@ -4,6 +4,50 @@ Welcome to WitNetwork! This guide will help you set up and use the framework in 
 
 ---
 
+## Summary
+
+**WitNetwork** is a simple and flexible networking framework for Unity. It allows you to quickly set up server-client communication, send messages between peers, and manage network settings with minimal effort.
+
+---
+
+## Description
+
+WitNetwork is designed to make multiplayer and networked applications easy to build in Unity. By adding a single prefab to your scene and configuring a few settings, you can start hosting or joining network sessions. The framework supports both local and remote connections, automatic server discovery in local mode, and instant message-based communication between all connected peers using a simple command system.
+
+---
+
+## Technical Details
+
+- **Prefab-Based Initialization:**  
+  Add the `WitNetwork` prefab to your scene to automatically start the network on play.
+
+- **Configurable Settings:**  
+  All network parameters (mode, server IP/port, group ID, ping intervals, etc.) are managed via a ScriptableObject.  
+  Access these settings in the Unity Editor under `Tools > WitNetwork > Settings`.
+
+- **Modes:**  
+  - **Server:** Hosts the network session.
+  - **Client:** Connects to a server.
+  - **Local Mode:** Automatically discovers and connects to a local server without manual IP entry.
+  - **Hosted Mode:** Connects to a specified server IP.
+
+- **Communication:**  
+  Use `CommunicationManagerSO` to register command handlers and send messages.  
+  - Register a handler for a command name to receive messages.
+  - Use `SendMessage` to broadcast data to all connected peers.
+
+- **Threaded Client:**  
+  The client runs its update loop in a background thread, ensuring reliable communication even when the application is not focused.
+
+- **Extensible:**  
+  Easily extend the framework by registering new commands and handling custom data types.
+
+---
+
+WitNetwork is ideal for rapid prototyping, multiplayer games, and any Unity project that needs quick and reliable networking.
+
+---
+
 ## 1. Add the Network Prefab
 
 - Drag the **WitNetwork** prefab into your scene.

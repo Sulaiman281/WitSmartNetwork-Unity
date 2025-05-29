@@ -8,10 +8,8 @@
         "name": "Suleman",
         "email": "sayedsulaiman607@email.com"
     },
+    "samples": [],
     "dependencies": {
-        "com.unity.nuget.newtonsoft-json": "3.0.1"
-    },
-    "samples": [
-        
-    ]
+        "com.witshells.witsmartnetwork": "file:"
+    }
 }

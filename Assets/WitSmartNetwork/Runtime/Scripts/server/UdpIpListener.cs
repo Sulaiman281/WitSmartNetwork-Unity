@@ -3,8 +3,9 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
+using WitNetwork.Log;
 
-namespace WitSmartNetwork.Server
+namespace WitNetwork.Server
 {
     public class UdpIpListener : IDisposable
     {

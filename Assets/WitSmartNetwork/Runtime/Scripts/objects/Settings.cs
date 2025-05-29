@@ -1,6 +1,6 @@
 using UnityEngine;
-using WitSmartNetwork.Server;
-namespace WitSmartNetwork
+using WitNetwork.Server;
+namespace WitNetwork
 {
     public enum NetworkMode { Server, Client }
 

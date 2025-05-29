@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using WitNetwork.Log;
 
-namespace WitSmartNetwork.Communication
+namespace WitNetwork.Communication
 {
     /// <summary>
     /// Handles sending and receiving NetworkMessages, and dispatches them to the correct handler based on CMD.

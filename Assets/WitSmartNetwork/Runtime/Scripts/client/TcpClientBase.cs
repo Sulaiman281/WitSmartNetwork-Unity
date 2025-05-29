@@ -4,8 +4,9 @@ using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
+using WitNetwork.Log;
 
-namespace WitSmartNetwork.Client
+namespace WitNetwork.Client
 {
     public abstract class TcpClientBase : IDisposable
     {

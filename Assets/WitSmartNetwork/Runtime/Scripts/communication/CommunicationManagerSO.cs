@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using Newtonsoft.Json;
 
-namespace WitSmartNetwork.Communication
+namespace WitNetwork.Communication
 {
     [CreateAssetMenu(menuName = "WitSmartNetwork/CommunicationManager")]
     public class CommunicationManagerSO : ScriptableObject
@@ -76,13 +76,13 @@ namespace WitSmartNetwork.Communication
             }
             catch (JsonException ex)
             {
-                Logger.LogWarning($"Failed to deserialize network message: {ex.Message}");
+                WitNetwork.Log.Logger.LogWarning($"Failed to deserialize network message: {ex.Message}");
                 return;
             }
 
             if (msg == null || string.IsNullOrEmpty(msg.CMD))
             {
-                Logger.LogWarning("Received invalid network message.");
+                WitNetwork.Log.Logger.LogWarning("Received invalid network message.");
                 return;
             }
 
@@ -92,7 +92,7 @@ namespace WitSmartNetwork.Communication
             }
             else
             {
-                Logger.LogWarning($"No UnityEvent registered for CMD '{msg.CMD}'.");
+                WitNetwork.Log.Logger.LogWarning($"No UnityEvent registered for CMD '{msg.CMD}'.");
             }
         }
 
@@ -100,7 +100,7 @@ namespace WitSmartNetwork.Communication
         {
             if (string.IsNullOrEmpty(cmd) || handler == null)
             {
-                Logger.LogWarning("Invalid command or handler provided for registration.");
+                WitNetwork.Log.Logger.LogWarning("Invalid command or handler provided for registration.");
                 return;
             }
 

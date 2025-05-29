@@ -1,9 +1,9 @@
 using System.Threading;
 using UnityEngine;
-using WitSmartNetwork.Client;
-using WitSmartNetwork.Communication;
-using WitSmartNetwork.Server;
-namespace WitSmartNetwork
+using WitNetwork.Client;
+using WitNetwork.Communication;
+using WitNetwork.Server;
+namespace WitNetwork
 {
     public class NetworkInitializer : MonoBehaviour
     {
@@ -36,7 +36,7 @@ namespace WitSmartNetwork
         {
             if (Settings == null)
             {
-                Logger.LogError("Settings ScriptableObject not assigned!");
+                WitNetwork.Log.Logger.LogError("Settings ScriptableObject not assigned!");
                 return;
             }
 
@@ -77,7 +77,7 @@ namespace WitSmartNetwork
 
         private void StartClient()
         {
-            Logger.Log("Starting WitShells Smart Network Client!");
+            WitNetwork.Log.Logger.Log("Starting WitShells Smart Network Client!");
 
             string discoverIp = Settings.ServerIp;
             int port = Settings.ServerPort;
@@ -92,12 +92,12 @@ namespace WitSmartNetwork
                     udpBroadcaster.Update();
                     if (udpBroadcaster.IsFailed)
                     {
-                        Logger.LogError("Failed to discover server IP.");
+                        WitNetwork.Log.Logger.LogError("Failed to discover server IP.");
                         return;
                     }
                     Thread.Sleep(100); // Wait a bit before trying again
                 }
-                Logger.Log($"Discovered server IP: {discoverIp}");
+                WitNetwork.Log.Logger.Log($"Discovered server IP: {discoverIp}");
             }
 
             client = new MyTcpClient(discoverIp.Trim(), port);
@@ -142,7 +142,7 @@ namespace WitSmartNetwork
                     {
                         ni.server.Dispose();
                         ni.server = null;
-                        Logger.Log("Server stopped.");
+                        WitNetwork.Log.Logger.Log("Server stopped.");
                     }
                 }
 
@@ -152,7 +152,7 @@ namespace WitSmartNetwork
                     {
                         ni.client.Dispose();
                         ni.client = null;
-                        Logger.Log("Client stopped.");
+                        WitNetwork.Log.Logger.Log("Client stopped.");
                     }
                 }
             }

@@ -1,5 +1,5 @@
 using Newtonsoft.Json;
-namespace WitSmartNetwork.Communication
+namespace WitNetwork.Communication
 {
     public class NetworkMessage
     {

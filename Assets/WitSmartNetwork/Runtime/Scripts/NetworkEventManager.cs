@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace WitSmartNetwork
+namespace WitNetwork
 {
     public class NetworkEventManager : MonoBehaviour
     {

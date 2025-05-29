@@ -5,8 +5,9 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using WitNetwork.Log;
 
-namespace WitSmartNetwork.Client
+namespace WitNetwork.Client
 {
     public abstract class UdpBroadcaster : IDisposable
     {

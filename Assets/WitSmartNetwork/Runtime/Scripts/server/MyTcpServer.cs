@@ -3,7 +3,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace WitSmartNetwork.Server
+namespace WitNetwork.Server
 {
     public class MyTcpServer : ATcpServer
     {
@@ -72,7 +72,7 @@ namespace WitSmartNetwork.Server
             {
                 return;
             }
-            Logger.Log($"Message received from client {clientId}: {message}");
+            WitNetwork.Log.Logger.Log($"Message received from client {clientId}: {message}");
             NetworkEventManager.Instance.OnServerMessageReceived.Invoke(clientId, message);
             var groupId = GetClientGroupId(clientId);
             if (groupId <= 0)

@@ -4,7 +4,7 @@ using System.IO;
 using System.Net.Sockets;
 using System.Threading;
 
-namespace WitSmartNetwork.Server
+namespace WitNetwork.Server
 {
     public class TcpClientHandle
     {
@@ -146,7 +146,7 @@ namespace WitSmartNetwork.Server
                             }
                             catch (IOException e)
                             {
-                                Logger.LogWarning("Incoming exception: " + e);
+                                WitNetwork.Log.Logger.LogWarning("Incoming exception: " + e);
                                 Close();
                                 break;
                             }

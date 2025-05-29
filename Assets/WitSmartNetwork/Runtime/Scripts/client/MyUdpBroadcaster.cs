@@ -1,6 +1,7 @@
 using System.Net;
+using WitNetwork.Log;
 
-namespace WitSmartNetwork.Client
+namespace WitNetwork.Client
 {
     public class MyUdpBroadcaster : UdpBroadcaster
     {
